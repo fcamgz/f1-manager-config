@@ -51,3 +51,5 @@ eureka:
     prefer-ip-address: true
     statusPageUrlPath: /${server.servletPath}/info
     healthCheckUrlPath: /${server.servletPath}/health
+
+someValue: comingFromConfigServer
