@@ -1,4 +1,7 @@
 spring:
+  cloud:
+    config:
+      allow-override: true
   application:
     name: team
   datasource:
@@ -31,10 +34,8 @@ spring:
   sql:
     init:
       mode: always
-  profiles:
-    active: default
   config:
-    import: optional:configserver:http://localhost:8071/
+    import: http://localhost:8071/
 
 # custom port
 server:
@@ -52,4 +53,17 @@ eureka:
     statusPageUrlPath: /${server.servletPath}/info
     healthCheckUrlPath: /${server.servletPath}/health
 
-someValue: comingFromConfigServer
+management:
+  info:
+    env:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: info
+  endpoint:
+    health:
+      group:
+        custom:
+          show-components: always
+          show-details: always
