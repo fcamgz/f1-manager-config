@@ -1,6 +1,6 @@
 spring:
   application:
-    name: f1-team
+    name: team
   datasource:
     # create a file for h2 db data to persist
     # use jdbc:h2:mem:testdb for ephemeral db
